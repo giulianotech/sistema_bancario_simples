@@ -29,16 +29,20 @@ while True:
             
             print("saque.")
             saque = float(input("Digite o valor do saque: "))  
-            if saque != numero_saques:
-                  
-                  print("Número de saques excedido.")
-            elif saque > limite:
-                  print("Valor do saque excede o limite.")
+            if saque > limite:
+                   print("Valor do saque excede o limite.")
+            elif saque > saldo:
+                   print("Saldo insuficiente para saque.")
+            elif numero_saques > 3:
+                     print("Número máximo de saques atingido.")
+            else:
+                        saldo -= saque
+                        numero_saques += 1
+                        print(f"Saque de R$ {saque:.2f} realizado com sucesso.")
+                 
+            
 
-                         
-    
     elif opcao == "e":
-       
          print("Extrato." + f"\nSaldo: R$ {saldo:.2f}") 
 
     elif opcao == "q":
